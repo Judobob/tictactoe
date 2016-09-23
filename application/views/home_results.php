@@ -8,32 +8,9 @@
  <body>
 <div class="container-fluid">
 <div class="row">
-
+<a href="<?php echo site_url('home') ?>">Link</a>
 <h2 id ="username"><?php echo $username; ?></h2>
-<div class="col-lg-6">
-	<div class="col-lg-2">Player1 (X)</div><div id ="player1" class="col-lg-9"><?php echo $username; ?></div>
-	<div class="col-lg-2">Player2 (O)</div><div id ="player2" class="col-lg-9"></div>
-	<div id="tic-tac-toe" class="col-lg-12">
-  		<div class="span3 new_span">
-      			<h1 class="span3">Tic Tac Toe</h1>   
-    		<ul class="row" id="game">
-      			<li id="one" class="btn btn-default span1">+</li>
-      			<li id="two" class="btn btn-default span1">+</li>
-      			<li id="three" class="btn btn-default span1">+</li>
-      			<li id="four" class="btn btn-default span1">+</li>
-      			<li id="five" class="btn btn-default span1">+</li>
-      			<li id="six" class="btn btn-default span1">+</li>
-      			<li id="seven" class="btn btn-default span1">+</li>
-      			<li id="eight" class="btn btn-default span1">+</li>
-      			<li id="nine" class="btn btn-default span1">+</li>
-    		</ul>    
-  	</div>
-</div>
-<div class="col-lg-6">
-   <div id="last_games" class="hidden-xs">
-
-   <table id="games" class="table table-striped">
-   <?php if( $game_results){ ?>
+  <table id="games" class="table table-striped">
    <?php foreach($game_results as $result): ?>
    <tr class="game_row ">
 	<td>X</td>
@@ -162,18 +139,3 @@
 	</td>
    </tr>
    <?php endforeach; ?>
-<?php } ?>
-   </div>
-   </table>
-</div>
-<a href="<?php echo site_url('home/results') ?>" class="btn-success btn span3">Link</a>
-   <a href="#" id="reset" class="btn-success btn span3">Restart</a>
-   <a href="home/logout" class="btn-success btn span3">Logout</a>
-</div>
-<script type="text/javascript" src="<?php echo base_url("assets/js/jquery-3.1.0.min.js"); ?>"></script>
-<script type="text/javascript" src="<?php echo base_url("assets/js/bootstrap.js"); ?>"></script>
-<script src="/node_modules/socket.io-client/socket.io.js"></script>
-<script src="/assets/js/socket.js"></script>
-
- </body>
-</html>
